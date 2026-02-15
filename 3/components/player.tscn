@@ -1,0 +1,145 @@
+[gd_scene load_steps=10 format=3 uid="uid://cu2hd5gc2uis5"]
+
+[ext_resource type="Texture2D" uid="uid://cgtjtrwswopaj" path="res://assets/img/sheets.png" id="1_4xqdv"]
+[ext_resource type="Script" uid="uid://cj6bss7e8cbny" path="res://components/player.gd" id="1_23yfx"]
+[ext_resource type="AudioStream" uid="uid://j7b3m0ohgq8y" path="res://assets/sounds/explode.ogg" id="3_cbq76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chxpf"]
+size = Vector2(47, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2watu"]
+size = Vector2(120, 120)
+
+[sub_resource type="Animation" id="Animation_ad485"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("death_effect:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_kxphu"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("death_effect:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rpi5y"]
+_data = {
+&"RESET": SubResource("Animation_ad485"),
+&"death": SubResource("Animation_kxphu")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u7fll"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 684.93
+initial_velocity_max = 993.61
+gravity = Vector3(0, 98, 0)
+scale_min = 35.9
+scale_max = 35.9
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.0
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_23yfx")
+
+[node name="imgs" type="Node2D" parent="."]
+
+[node name="mode0" type="Node2D" parent="imgs"]
+
+[node name="img" type="Node2D" parent="imgs/mode0"]
+
+[node name="mode0" type="Sprite2D" parent="imgs/mode0/img"]
+position = Vector2(0, -3)
+texture = ExtResource("1_4xqdv")
+hframes = 10
+vframes = 10
+frame = 31
+
+[node name="mode0" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_chxpf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)
+limit_left = 0
+limit_top = -300
+limit_bottom = 1300
+
+[node name="ground" type="RayCast2D" parent="."]
+target_position = Vector2(0, 55)
+
+[node name="damage" type="Node2D" parent="."]
+
+[node name="damage_area" type="Area2D" parent="damage"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="mode0" type="CollisionShape2D" parent="damage/damage_area"]
+visible = false
+position = Vector2(-7, -10)
+shape = SubResource("RectangleShape2D_2watu")
+
+[node name="AnimationDeath" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rpi5y")
+}
+
+[node name="death_effect" type="GPUParticles2D" parent="."]
+position = Vector2(-2, -2)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_u7fll")
+
+[node name="boom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cbq76")
+
+[connection signal="body_entered" from="damage/damage_area" to="." method="_on_damage_area_body_entered"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnao05uqtnehs"]
+
+[ext_resource type="Texture2D" uid="uid://cgtjtrwswopaj" path="res://assets/img/sheets.png" id="1_2vkv8"]
+[ext_resource type="Script" uid="uid://c8roglrd02lf5" path="res://components/portal.gd" id="1_r4t1s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7240r"]
+size = Vector2(79, 284)
+
+[node name="portal" type="Area2D"]
+script = ExtResource("1_r4t1s")
+
+[node name="front" type="Sprite2D" parent="."]
+position = Vector2(25, 0)
+texture = ExtResource("1_2vkv8")
+hframes = 10
+vframes = 3
+frame = 6
+
+[node name="back" type="Sprite2D" parent="."]
+position = Vector2(-29, 2.5)
+scale = Vector2(1, 0.997758)
+texture = ExtResource("1_2vkv8")
+hframes = 10
+vframes = 3
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17.5, 1)
+shape = SubResource("RectangleShape2D_7240r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

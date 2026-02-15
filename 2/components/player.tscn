@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu2hd5gc2uis5"]
+
+[ext_resource type="Texture2D" uid="uid://cgtjtrwswopaj" path="res://assets/img/sheets.png" id="1_4xqdv"]
+[ext_resource type="Script" uid="uid://plyj8qt8xhu3" path="res://components/player.gd" id="1_23yfx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chxpf"]
+size = Vector2(47, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2watu"]
+size = Vector2(120, 120)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_23yfx")
+
+[node name="imgs" type="Node2D" parent="."]
+
+[node name="mode0" type="Node2D" parent="imgs"]
+
+[node name="img" type="Node2D" parent="imgs/mode0"]
+
+[node name="mode0" type="Sprite2D" parent="imgs/mode0/img"]
+position = Vector2(0, -3)
+texture = ExtResource("1_4xqdv")
+hframes = 10
+vframes = 10
+frame = 31
+
+[node name="mode0" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_chxpf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)
+limit_left = 0
+limit_top = -300
+limit_bottom = 1300
+
+[node name="ground" type="RayCast2D" parent="."]
+target_position = Vector2(0, 55)
+
+[node name="damage" type="Node2D" parent="."]
+
+[node name="damage_area" type="Area2D" parent="damage"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="mode0" type="CollisionShape2D" parent="damage/damage_area"]
+position = Vector2(-7, -10)
+shape = SubResource("RectangleShape2D_2watu")
+
+[connection signal="body_entered" from="damage/damage_area" to="." method="_on_damage_area_body_entered"]

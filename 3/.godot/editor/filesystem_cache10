@@ -1,0 +1,25 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1761556921
+icon.svg::CompressedTexture2D/CompressedTexture2D::8674949919399195031::1730722284::1761484927::1::::<><><>0<>0<>cbf4332623481586c0d8d58b1d056198<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1761518229
+::res://assets/img/::1761518229
+bg_0.png::CompressedTexture2D/CompressedTexture2D::6481687466873197821::1730196984::1761484927::1::::<><><>0<>0<>6e7da20eda8334db4f6a4a0ccc21e0ed<>res://.godot/imported/bg_0.png-0b794e0b4f33fbf2bdba3b5814563d7f.ctex::
+play.png::CompressedTexture2D/CompressedTexture2D::7929764838412346706::1730196984::1761484927::1::::<><><>0<>0<>3adc42c3928a4a2e4c30b6f0549c384e<>res://.godot/imported/play.png-f0c8b6f4efb0422ea004ef1d0ea62f89.ctex::
+sheets.png::CompressedTexture2D/CompressedTexture2D::5233778917291077589::1730196984::1761484927::1::::<><><>0<>0<>f8826206a4a35b3fb8a23982f66c923b<>res://.godot/imported/sheets.png-b0d4488697ebd01ce40d48fc0b74b90b.ctex::
+tiles.png::CompressedTexture2D/CompressedTexture2D::4904681290870953857::1730196984::1761484927::1::::<><><>0<>0<>64e42f916ec19be53a4bcfc41d60f6df<>res://.godot/imported/tiles.png-29850deb4e24667c25118f8f9197dff7.ctex::
+title.png::CompressedTexture2D/CompressedTexture2D::2325023151053359589::1730196984::1761484927::1::::<><><>0<>0<>fa6d5404a50b14b177a5fb7a47fb1bb0<>res://.godot/imported/title.png-c1faf98b642331a0d9e17947c68bae1d.ctex::
+::res://assets/sounds/::1761518229
+bg.mp3::AudioStreamMP3/AudioStreamMP3::2337372811775567081::1730196984::1761484927::1::::<><><>0<>0<>f6fb41a257fbaef5208391f3dd3d53c0<>res://.godot/imported/bg.mp3-fb49420e66b5cc267b799ab7b0fa19f6.mp3str::
+explode.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::697871069640325722::1730196984::1761484927::1::::<><><>0<>0<>629f7fb1f39a541f1c467702ce4975d7<>res://.godot/imported/explode.ogg-dfde7bbda746e924b65fcb108a1532e3.oggvorbisstr::
+menu.mp3::AudioStreamMP3/AudioStreamMP3::2408112059954093252::1730196984::1761484927::1::::<><><>0<>0<>70f48259cc4f088d0c22203a19887ab3<>res://.godot/imported/menu.mp3-b17d4b0d4c879012f9bfe9a141fc7871.mp3str::
+play.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::3237279431853493609::1730196984::1761484927::1::::<><><>0<>0<>3c10893209823a51e29a5123edb22e2a<>res://.godot/imported/play.ogg-b21ff9af9024e034eeb4ee9e54b5a0a3.oggvorbisstr::
+Zardonic feat. Mikey Rukus - Bring It On.mp3::AudioStreamMP3/AudioStreamMP3::538656719081807946::1731075096::1761484927::1::::<><><>0<>0<>431dc442d9feadd76aa0a18cc1e96210<>res://.godot/imported/Zardonic feat. Mikey Rukus - Bring It On.mp3-b3b413ceae7eb18f7d721a9f0eda8a96.mp3str::
+::res://components/::1761556827
+menu.gd::GDScript::6673049985288532180::1761556826::0::1::::<>Control<><>0<>0<><>::
+MENU.tscn::PackedScene/PackedScene::5769880548645777486::1761547893::0::1::::<><><>0<>0<><>::uid://cyl1pfdt8nkyn::::res://assets/img/bg_0.png<>uid://c2cqfnalhvxlk::::res://components/menu.gd<>uid://8ei16dl5giif::::res://assets/img/title.png<>uid://dk8ick84g3k5o::::res://assets/img/play.png<>uid://bakrivnjh1rgu::::res://assets/sounds/menu.mp3<>uid://bmefrwjno6qhd::::res://assets/sounds/play.ogg
+player.gd::GDScript::5468630526867366134::1761556827::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene/PackedScene::6232788400934622386::1761547893::0::1::::<><><>0<>0<><>::uid://cgtjtrwswopaj::::res://assets/img/sheets.png<>uid://cj6bss7e8cbny::::res://components/player.gd<>uid://j7b3m0ohgq8y::::res://assets/sounds/explode.ogg
+portal.gd::GDScript/GDScript::3874093312788806073::1761517969::0::1::::<>Area2D<><>0<>0<><>::
+portal.tscn::PackedScene/PackedScene::5686192624776441640::1761547893::0::1::::<><><>0<>0<><>::uid://cgtjtrwswopaj::::res://assets/img/sheets.png<>uid://bvgv0r8nicrph::::res://components/portal.gd
+::res://levels/::1761556826
+level.tscn::PackedScene::2070029083588200974::1761556826::0::1::::<><><>0<>0<><>::uid://cyl1pfdt8nkyn::::res://assets/img/bg_0.png<>uid://cb44nchwgbxjl::::res://assets/img/tiles.png<>uid://cu2hd5gc2uis5::::res://components/player.tscn<>uid://hw6ukw0m705k::::res://assets/sounds/Zardonic feat. Mikey Rukus - Bring It On.mp3<>uid://cnao05uqtnehs::::res://components/portal.tscn

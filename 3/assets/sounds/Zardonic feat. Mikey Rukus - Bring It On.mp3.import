@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hw6ukw0m705k"
+path="res://.godot/imported/Zardonic feat. Mikey Rukus - Bring It On.mp3-b3b413ceae7eb18f7d721a9f0eda8a96.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Zardonic feat. Mikey Rukus - Bring It On.mp3"
+dest_files=["res://.godot/imported/Zardonic feat. Mikey Rukus - Bring It On.mp3-b3b413ceae7eb18f7d721a9f0eda8a96.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

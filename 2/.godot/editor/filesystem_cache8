@@ -1,0 +1,23 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1731066972
+icon.svg::CompressedTexture2D::8674949919399195031::1730722283::1730722290::1::::<><>::
+::res://assets/::1730723141
+::res://assets/img/::1730723147
+bg_0.png::CompressedTexture2D::6481687466873197821::1730196983::1730723147::1::::<><>::
+play.png::CompressedTexture2D::7929764838412346706::1730196983::1730723146::1::::<><>::
+sheets.png::CompressedTexture2D::5233778917291077589::1730196983::1730723147::1::::<><>::
+tiles.png::CompressedTexture2D::4904681290870953857::1730196983::1730723146::1::::<><>::
+title.png::CompressedTexture2D::2325023151053359589::1730196983::1730723146::1::::<><>::
+::res://assets/sounds/::1731075111
+bg.mp3::AudioStreamMP3::2337372811775567081::1730196983::1730723146::1::::<><>::
+explode.ogg::AudioStreamOggVorbis::697871069640325722::1730196983::1730723146::1::::<><>::
+menu.mp3::AudioStreamMP3::2408112059954093252::1730196983::1730723146::1::::<><>::
+play.ogg::AudioStreamOggVorbis::3237279431853493609::1730196983::1730723146::1::::<><>::
+Zardonic feat. Mikey Rukus - Bring It On.mp3::AudioStreamMP3::538656719081807946::1731075095::1731075120::1::::<><>::
+::res://components/::1731074650
+menu.gd::GDScript::-1::1731062862::0::1::::<>Control<>::
+MENU.tscn::PackedScene::5769880548645777486::1731074650::0::1::::<><>::uid://cyl1pfdt8nkyn::::res://assets/img/bg_0.png<>res://components/menu.gd<>uid://8ei16dl5giif::::res://assets/img/title.png<>uid://dk8ick84g3k5o::::res://assets/img/play.png<>uid://bakrivnjh1rgu::::res://assets/sounds/menu.mp3<>uid://bmefrwjno6qhd::::res://assets/sounds/play.ogg
+player.gd::GDScript::-1::1731074650::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::6232788400934622386::1731074650::0::1::::<><>::uid://cgtjtrwswopaj::::res://assets/img/sheets.png<>res://components/player.gd<>uid://j7b3m0ohgq8y::::res://assets/sounds/explode.ogg
+::res://levels/::1731074650
+level.tscn::PackedScene::2070029083588200974::1731074650::0::1::::<><>::uid://cyl1pfdt8nkyn::::res://assets/img/bg_0.png<>uid://cb44nchwgbxjl::::res://assets/img/tiles.png<>uid://cu2hd5gc2uis5::::res://components/player.tscn

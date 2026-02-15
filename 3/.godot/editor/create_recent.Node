@@ -1,0 +1,14 @@
+CollisionShape2D
+Sprite2D
+Node2D
+Timer
+Area2D
+AudioStreamPlayer2D
+AudioListener2D
+GPUParticles2D
+AnimationPlayer
+RayCast2D
+Camera2D
+ParallaxBackground
+CharacterBody2D
+TileMapLayer

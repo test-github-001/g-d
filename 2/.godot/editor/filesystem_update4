@@ -1,0 +1,4 @@
+res://components/MENU.tscn
+res://components/menu.gd
+res://levels/level.tscn
+res://components/player.tscn

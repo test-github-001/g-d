@@ -1,0 +1,14 @@
+AudioStreamPlayer2D
+AudioListener2D
+GPUParticles2D
+AnimationPlayer
+CollisionShape2D
+Area2D
+Node2D
+RayCast2D
+Camera2D
+ParallaxBackground
+Sprite2D
+CharacterBody2D
+TileMapLayer
+TileMap
