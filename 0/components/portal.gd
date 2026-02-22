@@ -31,7 +31,7 @@ func _change_background_color(state):
 		STATES.PLANE:
 			bg_node.modulate = Color("#37eb26") # салатовый
 		STATES.DIE:
-			bg_node.modulate = Color("#00648d") # серый
+			bg_node.modulate = Color("#554d58") # серый
 			
 
 func _change_music(state):

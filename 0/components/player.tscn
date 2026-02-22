@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu2hd5gc2uis5"]
+[gd_scene load_steps=14 format=3 uid="uid://cu2hd5gc2uis5"]
 
 [ext_resource type="Texture2D" uid="uid://cgtjtrwswopaj" path="res://assets/img/sheets.png" id="1_4xqdv"]
-[ext_resource type="Script" uid="uid://c4d1rg06dme0q" path="res://components/player.gd" id="1_23yfx"]
+[ext_resource type="Script" uid="uid://bsfey1eexsgw8" path="res://components/player.gd" id="1_23yfx"]
 [ext_resource type="AudioStream" uid="uid://j7b3m0ohgq8y" path="res://assets/sounds/explode.ogg" id="3_cbq76"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chxpf"]
@@ -10,11 +10,17 @@ size = Vector2(47, 120)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcp2q"]
 size = Vector2(141, 43)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_typkm"]
+size = Vector2(125.5, 78.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2watu"]
 size = Vector2(120, 120)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2jmh"]
 size = Vector2(106, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d2i7"]
+size = Vector2(126, 78)
 
 [sub_resource type="Animation" id="Animation_ad485"]
 length = 0.001
@@ -112,7 +118,26 @@ hframes = 5
 vframes = 10
 frame = 11
 
+[node name="mode2" type="Node2D" parent="imgs"]
+visible = false
+
+[node name="hero" type="Sprite2D" parent="imgs/mode2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4xqdv")
+hframes = 10
+vframes = 10
+frame = 31
+
+[node name="ufo" type="Sprite2D" parent="imgs/mode2"]
+position = Vector2(-4, 37)
+scale = Vector2(0.905, 0.905)
+texture = ExtResource("1_4xqdv")
+hframes = 5
+vframes = 10
+frame = 16
+
 [node name="mode0" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-3, -10)
 shape = SubResource("RectangleShape2D_chxpf")
 
@@ -120,6 +145,12 @@ shape = SubResource("RectangleShape2D_chxpf")
 visible = false
 position = Vector2(-4.5, 36.5)
 shape = SubResource("RectangleShape2D_qcp2q")
+disabled = true
+
+[node name="mode2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2.75, 26.75)
+shape = SubResource("RectangleShape2D_typkm")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -132,6 +163,7 @@ limit_bottom = 1300
 target_position = Vector2(0, 55)
 
 [node name="damage" type="Node2D" parent="."]
+visible = false
 
 [node name="damage_area" type="Area2D" parent="damage"]
 collision_layer = 2
@@ -146,6 +178,11 @@ shape = SubResource("RectangleShape2D_2watu")
 visible = false
 position = Vector2(-1, 21)
 shape = SubResource("RectangleShape2D_v2jmh")
+disabled = true
+
+[node name="mode2" type="CollisionShape2D" parent="damage/damage_area"]
+position = Vector2(-2, 27)
+shape = SubResource("RectangleShape2D_3d2i7")
 disabled = true
 
 [node name="AnimationDeath" type="AnimationPlayer" parent="."]

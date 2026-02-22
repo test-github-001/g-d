@@ -4,6 +4,7 @@ extends CharacterBody2D
 enum STATES {
 	SQUARE,
 	PLANE,
+	UFO,
 	DIE
 }
 
@@ -14,15 +15,15 @@ var gravity = 100
 var jump = 2000
 var on_ground = false
 
-@onready var statesImages = [$imgs/mode0, $imgs/mode1]
-@onready var statesCollision = [$mode0, $mode1]
-@onready var statesDamage = [$damage/damage_area/mode0, $damage/damage_area/mode1]
+@onready var statesImages = [$imgs/mode0, $imgs/mode1,$imgs/mode2]
+@onready var statesCollision = [$mode0, $mode1,$mode2]
+@onready var statesDamage = [$damage/damage_area/mode0, $damage/damage_area/mode1,$damage/damage_area/mode2]
 
 @onready var ImageState0: Node2D = $imgs/mode0/img
 
 
 func change_state(state):
-	for i in range(2):
+	for i in range(3):
 		statesImages[i].visible = false
 		statesCollision[i].disabled = true
 		statesDamage[i].disabled = true
@@ -50,12 +51,35 @@ func mode0(delta):
 		
 	move_and_slide()
 
+func mode1(delta):
+	var vertical_speed = 2000
+	var gravity = -50
+	velocity.x = speed
+	if not Input.is_action_pressed("jump"):
+		gravity = -gravity 
+	velocity.y = clamp(velocity.y + gravity, -vertical_speed, vertical_speed)
+	var rotation = (velocity.y / vertical_speed) 
+	$imgs/mode1.rotation_degrees = rotation * 60
 
+	move_and_slide()
+	
+func mode2(delta):
+	velocity.x = speed
+	velocity.y += gravity * 0.5
+	if Input.is_action_just_pressed("jump"):
+		velocity.y = -jump*0.5
+	var vertical_speed = 2000
+	if velocity.y > vertical_speed:
+		velocity.y = vertical_speed
+	
+	move_and_slide()
 	
 func _physics_process(delta):
 	match STATE:
 		0: mode0(delta)
 		1: mode1(delta)
+		2: mode2(delta)
+		
 	if velocity.x == 0:
 		death()
 
@@ -64,21 +88,6 @@ func death():
 	if STATE != STATES.DIE:
 		$boom.play()
 	change_state(STATES.DIE)
-
-
-
-func mode1(delta):
-	var vertical_speed = 2000
-	var gravity = -50
-	velocity.x = speed
-	
-	if not Input.is_action_pressed("jump"):
-		gravity = -gravity 
-	velocity.y = clamp(velocity.y + gravity, -vertical_speed, vertical_speed)
-	var rotation = (velocity.y / vertical_speed) 
-	$imgs/mode1.rotation_degrees = rotation * 60
-
-	move_and_slide()
 
 func _on_damage_area_body_entered(body):
 	if body.is_in_group("damage"):
