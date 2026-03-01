@@ -1,0 +1,28 @@
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1732542762
+export_presets.cfg::TextFile::-1::1732540637::0::1::::<><>::
+icon.svg::CompressedTexture2D::8674949919399195031::1730722283::1730722290::1::::<><>::
+::res://assets/::1730723141
+::res://assets/img/::1730723147
+bg_0.png::CompressedTexture2D::6481687466873197821::1730196983::1730723147::1::::<><>::
+play.png::CompressedTexture2D::7929764838412346706::1730196983::1730723146::1::::<><>::
+sheets.png::CompressedTexture2D::5233778917291077589::1730196983::1730723147::1::::<><>::
+tiles.png::CompressedTexture2D::4904681290870953857::1730196983::1730723146::1::::<><>::
+title.png::CompressedTexture2D::2325023151053359589::1730196983::1730723146::1::::<><>::
+::res://assets/sounds/::1731075120
+bg.mp3::AudioStreamMP3::2337372811775567081::1730196983::1730723146::1::::<><>::
+explode.ogg::AudioStreamOggVorbis::697871069640325722::1730196983::1730723146::1::::<><>::
+menu.mp3::AudioStreamMP3::2408112059954093252::1730196983::1730723146::1::::<><>::
+play.ogg::AudioStreamOggVorbis::3237279431853493609::1730196983::1730723146::1::::<><>::
+Zardonic feat. Mikey Rukus - Bring It On.mp3::AudioStreamMP3::538656719081807946::1731075095::1731075120::1::::<><>::
+::res://components/::1732531426
+menu.gd::GDScript::-1::1732521928::0::1::::<>Control<>::
+MENU.tscn::PackedScene::5769880548645777486::1732531426::0::1::::<><>::uid://cyl1pfdt8nkyn::::res://assets/img/bg_0.png<>res://components/menu.gd<>uid://8ei16dl5giif::::res://assets/img/title.png<>uid://dk8ick84g3k5o::::res://assets/img/play.png<>uid://bakrivnjh1rgu::::res://assets/sounds/menu.mp3<>uid://bmefrwjno6qhd::::res://assets/sounds/play.ogg
+player.gd::GDScript::-1::1732523967::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::6232788400934622386::1732531426::0::1::::<><>::uid://cgtjtrwswopaj::::res://assets/img/sheets.png<>res://components/player.gd<>uid://j7b3m0ohgq8y::::res://assets/sounds/explode.ogg
+portal.gd::GDScript::-1::1731928947::0::1::::<>Area2D<>::
+portal.tscn::PackedScene::5686192624776441640::1732531426::0::1::::<><>::uid://cgtjtrwswopaj::::res://assets/img/sheets.png<>res://components/portal.gd
+win.tscn::PackedScene::724885991483301292::1732531426::0::1::::<><>::uid://8ei16dl5giif::::res://assets/img/title.png<>uid://cgtjtrwswopaj::::res://assets/img/sheets.png
+::res://levels/::1732531426
+finish.gd::GDScript::-1::1732528633::0::1::::<>Area2D<>::
+level.tscn::PackedScene::2070029083588200974::1732531426::0::1::::<><>::uid://cyl1pfdt8nkyn::::res://assets/img/bg_0.png<>uid://cb44nchwgbxjl::::res://assets/img/tiles.png<>uid://cu2hd5gc2uis5::::res://components/player.tscn<>uid://hw6ukw0m705k::::res://assets/sounds/Zardonic feat. Mikey Rukus - Bring It On.mp3<>uid://cnao05uqtnehs::::res://components/portal.tscn<>res://levels/finish.gd

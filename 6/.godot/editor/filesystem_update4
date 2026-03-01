@@ -1,0 +1,8 @@
+res://components/MENU.tscn
+res://components/player.tscn
+res://components/portal.tscn
+res://components/win.tscn
+res://levels/level.tscn
+res://components/menu.gd
+res://components/player.gd
+res://components/portal.gd

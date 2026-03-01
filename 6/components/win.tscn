@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://kle1b6rii3a3"]
+
+[ext_resource type="Texture2D" uid="uid://8ei16dl5giif" path="res://assets/img/title.png" id="1_eqrhy"]
+[ext_resource type="Texture2D" uid="uid://cgtjtrwswopaj" path="res://assets/img/sheets.png" id="2_v130y"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="Sprite2D" parent="."]
+position = Vector2(576, 179)
+rotation = -1.5708
+scale = Vector2(0.921751, 0.662831)
+texture = ExtResource("1_eqrhy")
+
+[node name="hero" type="Sprite2D" parent="."]
+position = Vector2(575, 434)
+texture = ExtResource("2_v130y")
+hframes = 10
+vframes = 10
+frame = 30
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 501.0
+offset_right = 1012.0
+offset_bottom = 606.0
+theme_override_colors/font_color = Color(0.662745, 0.933333, 0.243137, 1)
+theme_override_colors/font_outline_color = Color(0, 0.188235, 0.0745098, 1)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 37
+text = "Поздравляю с прохождением 
+своей собственной Geometry Dash!"
+horizontal_alignment = 1
